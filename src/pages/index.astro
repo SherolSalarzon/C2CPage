@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+import DigitalClock from "../components/DigitalClock.svelte";
+import Weather from "../components/Weather.svelte";
+
+import { Image } from "astro:assets";
+import frontpage2 from "../assets/img/C2CNewsIcon.jpg";
+
+const images = await Astro.glob("../assets/img/slideimg/*");
+import MySwiper from "../components/swiper";
+---
+
+<Layout title="Coast To Coast Sports">
+  <>
+    <div
+      class="flex items-center bg-zinc-950 justify-between rounded-md max-w-full mt-5"
+    >
+      <Image src={frontpage2} alt="front page Image" width={350} />
+      <div class="flex justify-center gap-9">
+        <DigitalClock client:load />
+        <Weather client:load />
+      </div>
+      <div class="w-1/3 max-h-72">
+        <MySwiper client:load images={images} />
+      </div>
+    </div>
+
+    <div id="main-content" class="flex gap-5 mt-2 rounded-m">
+      <div class="flex flex-col gap-2 rounded-5 w-full">
+        <Card
+          title="Midwest Basketball Shootout, Coming To Winnipeg"
+          date="Published April 27, 2023"
+          description="ANAVETS TRIBUTE 9.0 ARMY VS. NAVY NOVEMBER 11 & 12… TICKETS NOW AVAILABLE"
+          imgsrc=""
+          imgalt="first_post"
+        />
+        <Card
+          title="Midwest Basketball Shootout, Coming To Winnipeg2"
+          date="Published April 27, 2023"
+          description="ANAVETS TRIBUTE 9.0 ARMY VS. NAVY NOVEMBER 11 & 12… TICKETS NOW AVAILABLE"
+          imgsrc=""
+          imgalt="first_post"
+        />
+      </div>
+    </div>
+  </>
+</Layout>
+
+<style>
+  #MainIcon {
+    display: flex;
+    justify-content: center;
+  }
+
+  #main-content {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  main {
+    margin: auto;
+    padding-top: 1rem;
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+</style>

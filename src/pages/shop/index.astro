@@ -1,0 +1,26 @@
+---
+import MainLayout from "../../layouts/Layout.astro";
+import ShopCard from "../../components/ShopCard";
+
+// Checking every markdown in it's current directory
+const allPost = await Astro.glob("./*.md");
+---
+
+<MainLayout title="Mid-West Basketball Gear">
+  <div
+    class="card flex flex-col gap-5 p-5 bg-gray-900 my-5 rounded-md w-11/12 m-auto"
+  >
+    <h1 class="text-blue-300 p-2 text-5xl font-bold uppercase">
+      Mid West Basketball Tribute Gear
+    </h1>
+    <div class="flex flex-row gap-5 p-5">
+      {
+        allPost.map((post) => (
+          <a>
+            <ShopCard post={post} client:only="react" />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</MainLayout>

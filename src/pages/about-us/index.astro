@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+
+import img from "../../assets/img/post/aboutUsImg.png";
+---
+
+<!-- About Us -->
+<Layout title="About Us">
+  <div class="card flex flex-col m-auto mt-5 rounded-md text-lg bg-gray-900">
+    <h2 class="font-bold uppercase text-5xl text-blue-300">About Us</h2>
+    <p class="text-gray-400 text-xl m-5">
+      Formerly known as WinnipegSuperSports.Net aids to continue growth of
+      amateur sport in Manitoba and beyond … Coast To Coast C2C
+    </p>
+    <Image src={img} alt="About Us" width={450} height={450} id={"Image"} />
+  </div>
+</Layout>
+
+<style>
+  #Image {
+    border-radius: 25px;
+  }
+
+  .card {
+    width: 90%;
+    list-style: none;
+    padding: 25px;
+    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+  h2 {
+    margin: 0;
+    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+</style>

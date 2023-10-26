@@ -1,0 +1,32 @@
+---
+import { Dropdown, DropdownItems } from "astro-navbar";
+
+interface Props {
+  title: string;
+  items: string[];
+  location: string[];
+}
+
+const { title, items, location } = Astro.props;
+---
+
+<Dropdown class="group w-full h-full">
+  <button class="w-full h-full">
+    <span class="block">{title}</span>
+  </button>
+  <DropdownItems class="">
+    <ul class="flex flex-col gap-1">
+      {
+        items.map((item, index) => (
+          <li class="bg-white text-black rounded-md z-10 text-center p-1">
+            <a class="w-full h-full" href={location[index]}>
+              {item}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </DropdownItems>
+</Dropdown>
+
+<style></style>

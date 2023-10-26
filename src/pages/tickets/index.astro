@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+
+import ShopCard from "../../components/ShopCard";
+import Layout from "../../layouts/Layout.astro";
+
+const allPost = await Astro.glob("./*.md");
+---
+
+<Layout title="Tickets Sale">
+  <div
+    class="flex flex-col gap-5 container p-5 w-11/12 bg-gray-900 rounded-md m-auto my-5"
+  >
+    <h1 class="text-blue-300 p-2 text-5xl font-bold uppercase">
+      Ticket For Sale
+    </h1>
+    <h1 class="text-blue-300 p-2 text-2xl">
+      Anavets Tribute - Army vs Navy, Nov 12
+    </h1>
+
+    <p class="text-white pl-5">Showing all 2 results:</p>
+
+    <div class="flex flex-row gap-5 p-5">
+      {allPost.map((post) => <ShopCard post={post} client:only="react" />)}
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Production">
+  <div
+    class="card flex flex-col m-auto mt-5 rounded-md text-lg bg-gray-900 w-11/12"
+  >
+    <h2 class="font-bold uppercase text-5xl text-blue-300 m-5">Production</h2>
+    <Image
+      src={"/images/employment_opportunity.png"}
+      alt="production_promo"
+      width={512}
+      height={512}
+      id={"Image"}
+    />
+    <a
+      href="https://www.sixtysixstudios.net/"
+      class="font-bold uppercase text-sm text-blue-300 m-5"
+    >
+      <div class="">
+        Kieran Peters | Freelance Filmmaker and Photographer | Winnipeg
+        <Image
+          src={"/images/sixty-six-studio.webp"}
+          alt="sixty-six-ICON"
+          width={250}
+          height={250}
+        />
+      </div>
+    </a>
+  </div>
+</Layout>
+
+<style>
+  #Image {
+    border-radius: 25px;
+    margin: 1.25rem;
+  }
+</style>

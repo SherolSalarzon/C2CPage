@@ -1,0 +1,37 @@
+{
+  "name": "steadfast-nebula",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astro-github-elements/time": "^0.1.4",
+    "@astrojs/react": "^3.0.3",
+    "@astrojs/svelte": "^4.0.3",
+    "@astrojs/tailwind": "^5.0.2",
+    "@astrouxds/astro-web-components": "^7.17.1",
+    "@astrouxds/rux-clock": "^5.3.1",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
+    "astro": "^3.2.3",
+    "astro-navbar": "^2.2.1",
+    "fast-glob": "^3.3.1",
+    "react": "^18.2.0",
+    "react-clock": "^4.5.0",
+    "react-dom": "^18.2.0",
+    "react-select": "^5.7.7",
+    "sharp": "^0.32.6",
+    "svelte": "^4.2.1",
+    "swiper": "^10.3.1",
+    "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.0"
+  }
+}

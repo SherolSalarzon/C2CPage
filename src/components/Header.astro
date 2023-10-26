@@ -1,0 +1,117 @@
+---
+import { Image } from "astro:assets";
+import frontpageIcon from "../assets/img/C2C_ICON_n.jpg";
+
+import { Astronav, MenuItems } from "astro-navbar";
+import DropdownMenu from "./DropdownMenu.astro";
+---
+
+<!-- 
+  Navigation
+ -->
+<header class="bg-zinc-950 w-full">
+  <div class="flex justify-center left-2 m-10">
+    <Image
+      class="rounded-full"
+      src={frontpageIcon}
+      alt="Main ICON"
+      width={350}
+      height={350}
+    />
+  </div>
+  <Astronav closeOnClick>
+    <MenuItems class="hidden lg:flex items-center">
+      <ul
+        class="flex flex-col gap-5 lg:flex-row text-sm justify-center p-2 w-full"
+      >
+        <li class="bg-gray-600">
+          <a class="flex w-full h-full justify-center items-center" href="/">
+            Home</a
+          >
+        </li>
+        <li class="bg-gray-600">
+          <a
+            class="flex w-full h-full justify-center items-center"
+            href="/about-us"
+          >
+            About Us</a
+          >
+        </li>
+        <li class="bg-red-600">
+          <a class="flex w-full h-full justify-center items-center" href="">
+            Tv Guide</a
+          >
+        </li>
+        <li class="bg-gray-600">
+          <DropdownMenu
+            title="Shop"
+            items={[
+              "Bookings",
+              "Tickets now on sale",
+              "Mid West Basketball Gear",
+            ]}
+            location={["/bookings", "/tickets", "/shop"]}
+          />
+        </li>
+        <li class="bg-green-500">
+          <DropdownMenu
+            title="Services"
+            items={["Production", "Coach"]}
+            location={["/production", "https://coach.ca/"]}
+          />
+        </li>
+        <li class="bg-yellow-500 px-1">
+          <DropdownMenu
+            title="Mid West Basketball Registration"
+            items={["1 on 1 with Barry Curtis"]}
+            location={["/basketball-registration"]}
+          />
+        </li>
+        <li class="bg-gray-600">
+          <DropdownMenu
+            title="BMHOP"
+            items={[
+              "1 on 1 with Big Mama",
+              "Contact Big Mama",
+              "BMHOP Clothing",
+            ]}
+            location={[
+              "/bigmama-registration/post-1",
+              "/contact-bigmama",
+              "/shop",
+            ]}
+          />
+        </li>
+        <li class="bg-gray-600">
+          <DropdownMenu
+            title="Contact Us"
+            items={["General Inquiries", "Bookings", "Comments"]}
+            location={["/inquiries", "/bookings", "/comments"]}
+          />
+        </li>
+      </ul>
+    </MenuItems>
+  </Astronav>
+</header>
+
+<style>
+  li:hover {
+    border: 2px solid rgb(147 197 253);
+  }
+
+  li {
+    border-radius: 25px;
+    width: 9rem;
+    height: 9rem;
+
+    color: white;
+
+    font-size: medium;
+
+    box-shadow: 4px 4px 4px #1c1917;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
